@@ -59,7 +59,7 @@ document.documentElement.style.width = document.body.style.width = '100%';
 //window.requestAnimationFrame = function(callback, element) {setTimeout(callback); };
 var Module = {
     preRun: [],
-    postRun: (function(){window.addEventListener('load',(function(){var x=document.createElement('script');x.src='http://3rdera.blob.core.windows.net/dev/demo/data.js';x.type="application/javascript";document.body.appendChild(x);})());}),
+    postRun: (function(){window.addEventListener('load',(function(){var x=document.createElement('script');x.src='data.js';x.type="application/javascript";document.body.appendChild(x);})());}),
     print: (function() {
         return function(text) {
             if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
