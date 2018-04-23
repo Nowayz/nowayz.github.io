@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html style="-webkit-overflow-scrolling: touch;">
+
+<head>
+    <meta name="theme-color" content="#525252">
+    <script src="scripts/pxalign.js"></script>
+    <script>
+        window._bench = Math.round(performance.now());
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>3rdEra Archive</title>
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="">
+    <!-- Header -->
+    <div id="header">
+        <div id="logo" class="light-version">
+            <img src="icons/logo.svg" style="height: 57px; left: 5px; position: absolute;">
+            <img src="icons/title.svg" style="height: 24px;left: 58px;top: 16px;position: absolute;">
+        </div>
+        <nav role="navigation">
+            <div class="header-link hide-menu">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="small-logo">
+                <img src="icons/title.svg" style="height: 24px;left: 82px;top: 4px;position: absolute;">
+                <img id="minilogo" src="icons/logo.svg" style="right: 8px;position: absolute;top: 0px;"> </div>
+        </nav>
+    </div>
+    <!-- Navigation -->
+    <aside id="menu">
+        <div class="menu-misc" style=""> Performance
+            <p style="margin-left: 12px;"> Parser Time:
+                <span id="rtime" style="display: inline-block; ">65ms</span>
+                <br> Render Time:
+                <span id="ltime" style="display: inline-block; ">6ms</span>
+            </p>
+            <img style="position: relative; right: 20px; bottom: 45px; float: right;opacity: 0.35;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABvElEQVRYR8VXYdKEIAjFk9XNqpvVydzBTxxEULT9Zp3ZH1vpezweRAHWVlS2hZWjVjbFGCOEEOC+b9j3Hc7zTD8AmD5vegMA/JwARhoxevzhWo1ek4xyaymj5V6mfrS3us//JGmv69IiSsAUcc9s6Im8mrOf50me4V6hhxI4PoAgTNIEnP/DcRw1dgjoiOoaBsD3ZLCUMgqCp6wQoJySo5mzE+tt29xVRiSICK8W6ZlKJrpJ4BWwEq3KiD3H1eABaSngZ0V8eDZqSx6Rksag8kIDjg0H/fFm9UjYBNCtGdgiMUPOqK6qdXal18BcBLInLBUqE45yLwFdBFjuNBVKGY7AS3dhnlghYJXhlPMJ+GcEUi/F3OY1UyUyDW0KmPt7pTdNgJlRbcVeD3Av/I8Cnp7vbcuKhOMUjAi8BH9XBS/AEVhrRnYjkmCr4OLtKMc3XydcBRddUMpfjUZU0k01fAGc5NeG1/7r+IvgWvSaAnitbcuzRIypKKtsTsXqVIQXZ+ZBfshoGrIUKA2OpmEatRsiHWU84CMCKR0sdzTTd6cz8bU0xPB+G1ZEegxINe+HqpdASUs3/L+bU2d+AJsFVDBiG2+1AAAAAElFTkSuQmCC"> </div>
+        <div id="navigation" style="">
+            <ul class="nav" id="side-menu">
+                <li class="active">
+                    <a href="index.html" odcache>
+                        <span class="nav-label" style="display: inline-block;">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="sigtoolkit.html" odcache>
+                        <span class="nav-label" style="display: inline-block;">Signature Toolkit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="libreaver.html" odcache>
+                        <span class="nav-label" style="display: inline-block;">DLL Reaver</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="sol.html" odcache>
+                        <span class="nav-label" style="display: inline-block;">Sol Framework</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="misclibs.html" odcache>
+                            <span class="nav-label" style="display: inline-block; color: #f3d691;">Other Releases</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- Main Wrapper -->
+    <div id="wrapper" style="">
+        <div class="content animate-panel" style="">
+            <div class="row" style="">
+                <div class="col-lg-8">
+                    <div class="hpanel hblue" style="">
+                        <div class="panel-body" style="text-align: justify;">
+
+                            <h2 class="text-info" style="margin-top: -4px;font-size: 11.25px;">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABaUlEQVRYR+1XWxKDIAyEm3kz4OR2gux0jbwE9EtmWlsD7GYJIVhTad77nc3ee1vrP2IrTijg27YZ+aB5781qElkCCvzUR2wrSRQJiLfGmIs9Ecjali1BDeQJAqdAEy/SWo84dHeMFYn3PVKQr/jXhBAiCf0e9hVPQRaMROAPLpOHEKM9MTtIaVAh6Zy7vO8lZ61lAvcV6CFZI7NEgZll+hT4FOhWQKK91GYSFsZO5YFvF4wqEA+AdOYMnwUzmRABiDN9P06jf87vmXzmwEIalsLmdQVYfiLwjgIMnmKgrcBoHkgl3SWF4D3qykfygPZUs+CiNhsDKEqckyyYL0ZQsusAlv4c5a0KOqsAQEV+TUKivwVOdWXzIlNUgEmwhL3gCLJWlVpVACSwppisJDs87wWnRHSuCe8Ulnxto99N6dG3qgB7rkt0CTT2+I7XvCzIv9ml4r2s97WydXusgeJAfQ3nTryNnriu/wCLjmey7sui/AAAAABJRU5ErkJggg=="> Welcome to 3rdEra,</h2>
+                            <h5 style="
+    font-size: 11.25px;
+">This is the headquarters for a few of my projects:</h5>
+                            <ul>
+                                <li>
+                                    <a href="sigtoolkit.html">Signature Toolkit</a> — a
+                                    <strong>reverse engineering</strong> tool to generate code signatures.
+                                </li>
+                                <li>
+                                    <a href="libreaver.html">DLL Reaver</a>
+                                    <strong> — .dll scraping</strong> utility for fast aggregation of libraries loaded by an application.
+                                </li>
+                                <li>
+                                    <a href="http://archive.3rdera.com/dev/demo">Icon Explorer</a> — a
+                                    <strong>WebGL UI</strong> demo for viewing icons.
+                                </li>
+
+                                <li>
+                                    <a href="sol.html">Sol Framework</a> — a multi-threaded Lua framework for
+                                    <strong>Web Scraping</strong>.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hpanel hgreen" style="">
+                        <div class="panel-body" style="">
+                            <div class="media social-profile clearfix">
+                                <a class="pull-left">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABpklEQVRYR82XCxKCMAxE4WYcrdyMm+EEWZouWdrioDLjKPST12ST4Dj8+Bp3++sXOGCrMHUArGtmGMf345RSyIXnfo2faOttzL5trtvnBHECwCJsyBD+3n5HEB7Axud5lhAFgDeuTsneUV6CBwCoIAoNYDN1Mnazms8ewDoHcYTiBNBiHBv6GLOG4IFIRA58V9swrD2nZwAIFhDwQGScwlwC9JxeeQEasXElUOmBTwHyiS2ly4zz3nkMgOMeheTxEJgXWAP+/r8BWM21/sCFS2VBkwdgvEeItTrgM6UqQt98WiDU6VkDnJZSA757eRjO5dZeUIRvz8rARi5EkYuilszd0O6nado+Ku0A0wygWnH0HEAe4lYa1ug5IyKPAYLLcFMWXDWSWnPxoeJwRKIMS7Eqo1Flu3r9srGaJkKALBQrpbUSVI5fhYPfjKpp6BUbFRJGiwTHwvSauARQjSSCwlwFHGUH1kgNKIBlWba4Rte58+dZKkW7AXo94EPHr3rdIWjNAiVblO6mZtSn/fuzoxBsu6WUvvEf8SBPKZUZ/3OA+069v/IFlB4wP9KZKO8AAAAASUVORK5CYII="
+                                        alt="profile-picture">
+                                </a>
+                                <div class="media-body">
+                                    <h4>
+                                        <a href="sigtoolkit.html" style="
+    font-size: 11.25px;
+">Signature Toolkit</a>
+                                    </h4>
+
+                                </div>
+                            </div>
+                            <div class="social-content m-t-md">
+                                Feature rich code signature generation and validation tool.
+                                <br>Includes signature scanner for validation of existing signatures, and a highly optimized
+                                signature search routine compiler.
+                                <a href="sigtoolkit.html">
+                                    <img class="img-responsive m-t-md" src="imgs/sigtool_tab1.png" alt="">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" style="margin-bottom: 60px; ">
+                    <div class="hpanel hred" style="margin-bottom: 25px;">
+                        <div class="panel-body" style="padding: 26px 20px 0px;">
+                            <div class="row" style="top: -20px;position: relative;">
+                                <div class="col-sm-12">
+                                    <h4>
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB00lEQVRYR91XbbKDIAyUk8nNwJvhydpZMBgjiVD1/XjMtH6AZNlsEnCT0mKMH61v5H2M0Vnj1U4ACCGM2DqNXZZlijHivWrndQCwboF4HYD3fkopqSBeBwA3ruuqgvgTAHCDBqIJoBUB8CN+oHSe5y5xQoRcyC0QBwBkmIygE7FYr64MB5CeCGFRoAHeZiyT5rCDibSuk5/napye8zUlDK5syJl72AETWCTWlpfEjWPFGICJOBgNRA8TEmQTQAwhr5gEAwYORuWz98OaICAHAFg9GSdfYwCaBWJaluqKURZOAMj3QwxcaIHTLnUxzAAymWw5w29ifJQBVXhSA/+GAQpDLkRT/ciCTIBbPJuZ0dQAAcBElHxkFHANZN/f8H8Nc56IJAiNgbxyZpzXB4uCSwbYxyUSyy7m3Lb3YIRYIRAjkXDKhA1Tzf0gr4Z7ZcO2zam1AXOPMFCxaHtCVDheLffdXgHRw0QPA7VA8fxN92WLFUqtRqtFvc3EowwQCOcgSB2ExcRtBgiE90jR10y8wsAdJn5iwIrzUXc8DiDrcEAT3QB68jxnxtKELOmHPaFC74+HU2RRKUz9aGieXC2/2304WW8gsoX9T373EoBshjOo2vkCeejoMHJu0M4AAAAASUVORK5CYII=">
+                                        <a href="http://archive.3rdera.com/dev/demo" style="
+    font-size: 11.25px;
+">Icon Explorer</a>
+                                    </h4> Written in:
+                                    <p class="text-info">C++ and OpenGL for Emscripten+WebGL</p>Icon Explorer pushes performance boundaries by
+                                    rendering
+                                    <b>60,558</b> unique images without breaking a sweat.
+                                    <p></p>
+                                    <table width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <u>LANG</u>
+                                                </td>
+                                                <td>
+                                                    <u>TOOLS</u>
+                                                </td>
+                                                <td>
+                                                    <u>WARNING</u>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>JavaScript</td>
+                                                <td>WebGL</td>
+                                                <td>1GB GPU MEM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C++</td>
+                                                <td>Emscripten</td>
+                                                <td>Recommended</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hpanel hred" style="">
+                        <div class="panel-body" style="padding: 26px 20px 0px;">
+                            <div class="row" style="top: -20px;position: relative;">
+                                <div class="col-sm-12">
+                                    <h4>
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABCUlEQVRYR+2XUQ6EIAxEpzfjZi0342bd1LgbWQGlstE1+qGJQRke0wEIJ190cv9oCBAdI06ag/y5gJQCQgjVfq4sAArFdCOQ70mElJKXAFRVEWPMrCAskCjZO2YutjOHHRJwWQKgnIC/WoRaJVL3AOXT4hVgFdIUUPPAKAKbAqoeIIJOMWU3G0P/k+YKmQn0pp5YiayczyyIOyrE2tnkW4UcEHAvAhZ0k+l3zajxG+yBWuox5CsJLfXMQIM98BB4CDwE/pCAdwlefrdYC/oIFBNzXt16hb33A5X9XzkJ1/tEhsXz1v6vJO4joGctaBFonQHaAnrZFdofIWD4hhzFvAQGjN/3i9NPxy8NUKhfXfGUGgAAAABJRU5ErkJggg==">
+                                        <a href="libreaver.html" style="font-size: 11.25px;">DLL Reaver</a>
+                                    </h4>
+                                    <p class="text-info">Saves all DLLs loaded by an executable.</p>
+
+                                    <a href="libreaver.html">
+                                        <img class="img-responsive m-t-md" src="imgs/libreaver.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hpanel hred" style="">
+                        <div class="panel-body" style="padding: 26px 20px 0px;">
+                            <div class="row" style="top: -20px;position: relative;">
+                                <div class="col-sm-12">
+                                    <h4>
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACCklEQVRYR8VW267EIAikX172y91YRO5qsw/b5OR0q8AIM8gFf36uP8eHUwBNAT2xOd5/5qy7+wDADaAge1sJGveXcVYAupu+3gBH8A6iv/OfwGnAQXmtg+X97EfDHymtAJBDXs2c05rsYJAEmYL3p3/n//RuYmYA5DSZAw3GOqMSMHAfOGYkohlYKeX86HcrmcgBf3IuR8zItH2XAXsKn04L3GcvHuiJrQEIiz3pOLVcV3Fu7bPae9vuW/h1CYmq9GlyxdLUUvSHEE0ZgkYWa/ZqJzqllM5aQd6ObfUhx7c8A5VBnnpLzZ5gH8jK0BA8r2GlgkTHPvpUUraQqCEnYeF1kfbKQrooR5Iu+pTRcsBLh2VnJXRyfxD3Kw6pZhZ7/W/115mIXGAJKqITgISdj6e97Opi0Ups685nLEGUGwc5Tb3NQtRI2gcI7WbzSxLWHJA4joS61+dleZOFvLT6lhwqiEg9Ee2NeAKCfGrJ+UFFdcJ150qYuylFPUEtGpEME9kko/vBvhseyY8PUd9mTJT3XDgZaMqBJGeuI85G/HZAZT4VWVyPVbYFv+kHtqSLlr4eyeIINg+PiICI0x4RW/82MSPA8zOfkpYzYdaULkRqVCrGrg1Ll1WNxxudaFrT0QDQYIr3rf/thhG9tQbwGRJVwcI8wWv3PS/7ZYxjAFJbW3ufUs+F3f3xBQ/Q+hnNhJKxAAAAAElFTkSuQmCC">
+                                        <a href="http://gl.ax" style="font-size: 11.25px;">GLAX - Web Game</a>
+                                    </h4>
+                                    <p class="text-info">Glax game engine is built from the ground up for massive multiplayer browser games.</p> It features networked physics, hardware rendering (WebGL with pixi.js), low-latency networking, and its own protocol and backend WebSocket server written in C++.
+
+                                    <a href="http://gl.ax">
+                                        <img class="img-responsive m-t-md" src="imgs/glax.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <span class="pull-right" style="display: inline-block;">
+                <a href="contact.html" odcache>Contact</a>
+            </span> Copyright© 2018 Phillip McNallen
+        </footer>
+    </div>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/homer.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            var ltime = document.querySelector('#ltime');
+            if (ltime) ltime.innerText = (Math.round(performance.now()) - window._bench) + 'ms';
+        }, true);
+        var rtime = document.querySelector('#rtime');
+        if (rtime) rtime.innerText = (Math.round(performance.now()) - window._bench) + 'ms';
+        window._bench = Math.round(performance.now());
+    </script>
+</body>
+
+</html>
